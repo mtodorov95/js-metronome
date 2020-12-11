@@ -1,13 +1,17 @@
-let metronome = new Metronome();
 let tempo = document.getElementById('tempo');
 let playPauseIcon = document.getElementById('playPauseIcon');
 let playButton = document.getElementById('playButton');
 let tempoSlider = document.getElementById('tempoSlider');
+let canvas = document.getElementById('myCanvas');
+
+let metronome = new Metronome();
+let pendulum = new Pendulum(canvas);
 
 tempo.textContent = metronome.tempo;
 
 playButton.addEventListener('click', () => {
     metronome.startStop();
+    pendulum.startStop();
     if (metronome.isRunning){
         playPauseIcon.className = 'pause';
     } else {
