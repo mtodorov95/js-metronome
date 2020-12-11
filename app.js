@@ -21,6 +21,7 @@ playButton.addEventListener('click', () => {
 
 tempoSlider.addEventListener('input', e => {
     metronome.tempo = e.target.value;
+    pendulum.setPeriod(metronome.tempo)
     tempo.textContent = metronome.tempo;
 })
 

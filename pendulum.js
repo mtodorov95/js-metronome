@@ -96,6 +96,7 @@ class Pendulum{
 
       setPeriod (bpm){
         this.period = (60 / bpm)*2000;
+        console.log(this.period);
       }
 
       startStop (){
