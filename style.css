@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #4e5763;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  color: #e9e9e9;
+}
+
+button {
+  padding: 6px;
+  border: none;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  background-color: #2a4949;
+  color: #e9e9e9;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+.dashboard {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.play {
+  width: 0;
+  height: 0;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-left: 50px solid #e9e9e9;
+  margin-left: 15px;
+}
+
+.pause {
+  width: 15px;
+  height: 60px;
+  border: none;
+  border-left: 15px solid #e9e9e9;
+  border-right: 15px solid #e9e9e9;
+}
+
+#playButton {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.tempoControls {
+  margin-bottom: 100px;
+}
+
+.tempoContainer {
+  margin: 0 15px;
+}
+
+#tempo {
+  font-size: 40px;
+}
+
+.bpm {
+  font-size: 12px;
+  text-align: center;
+}
+
+#tempoSlider {
+  height: 20px;
+  width: 200px;
+  transform: rotate(90deg);
+}

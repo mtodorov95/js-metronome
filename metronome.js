@@ -3,7 +3,7 @@ class Metronome{
         this.audioContext = null;
         this.notesInQueue = [];
         this.currentNote = 0;
-        this.tempo = 120;
+        this.tempo = 60;
         this.scheduleahead = 25;
         this.scheduleAheadTime = 0.1;
         this.nextNoteTime = 0.0;

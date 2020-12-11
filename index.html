@@ -6,6 +6,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="dashboard">
+        <div class="tempoControls">
+            <input id="tempoSlider" 
+            type="range" 
+            min="20.0" 
+            max="220.0" 
+            step="1" 
+            value="60">
+        </div>
+        <div class="tempoContainer">
+            <div id="tempo">60</div>
+            <div class="bpm">bpm</div>
+        </div>
+        <button id="playButton" class="">
+            <div id="playPauseIcon" class="play"></div>
+        </button>
+    </div>
+    
     
     <script src="pendulum.js"></script>
     <script src="metronome.js"></script>
