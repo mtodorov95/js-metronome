@@ -48,7 +48,7 @@ class Pendulum{
       
       start (){
         this.animating = true;
-        var date = new Date();
+        let date = new Date();
         this.startTime = date.getTime();
         this.lastTime = this.startTime;
         
@@ -76,11 +76,11 @@ class Pendulum{
       };
       
       animationLoop (){
-        var that = this;
+        let that = this;
         
         this.frame++;
-        var date = new Date();
-        var thisTime = date.getTime();
+        let date = new Date();
+        let thisTime = date.getTime();
         this.timeInterval = thisTime - this.lastTime;
         this.t += this.timeInterval;
         this.lastTime = thisTime;
@@ -99,16 +99,25 @@ class Pendulum{
         console.log(this.period);
       }
 
-      startStop (){
-        var context = this.getContext();
-        var canvas = this.getCanvas();
+      swing (){
+          this.configure();
+        if(this.animating){
+            this.stop();
+        } else {
+            this.start();
+        }
+      }
+
+      configure (){
+        let context = this.getContext();
+        let canvas = this.getCanvas();
         
-        var amplitude = Math.PI / 4;
-        var theta = 0;
-        var pendulumLength = 250;
-        var pendulumWidth = 5;
-        var rotationPointX = canvas.width / 2;
-        var rotationPointY = 20;
+        let amplitude = Math.PI / 4;
+        let theta = 0;
+        let pendulumLength = 250;
+        let pendulumWidth = 5;
+        let rotationPointX = canvas.width / 2;
+        let rotationPointY = 20;
         
         this.setStage(function(){
          theta = (amplitude * Math.sin((2 * Math.PI * this.getTime()) / this.period)) + Math.PI / 2;
@@ -121,29 +130,24 @@ class Pendulum{
           context.fill();
           
           context.beginPath();
-          var endPointX = rotationPointX + (pendulumLength * Math.cos(theta));
-          var endPointY = rotationPointY + (pendulumLength * Math.sin(theta));
+          let endPointX = rotationPointX + (pendulumLength * Math.cos(theta));
+          let endPointY = rotationPointY + (pendulumLength * Math.sin(theta));
           context.beginPath();
           context.moveTo(rotationPointX, rotationPointY);
           context.lineTo(endPointX, endPointY);
           context.lineWidth = pendulumWidth;
           context.lineCap = "round";
-          context.strokeStyle = "#555";
+          context.strokeStyle = "#222";
           context.stroke();
     
           context.beginPath();
           context.arc(endPointX, endPointY, 40, 0, 2 * Math.PI, false);
-          var grd = context.createLinearGradient(endPointX - 50, endPointY - 50, endPointX + 50, endPointY + 50);
+          let grd = context.createLinearGradient(endPointX - 50, endPointY - 50, endPointX + 50, endPointY + 50);
           grd.addColorStop(0, "#444");
           grd.addColorStop(0.5, "white");
           grd.addColorStop(1, "#444");
           context.fillStyle = grd;
           context.fill();
         });
-        if(this.animating){
-            this.stop();
-        } else {
-            this.start();
-        }
       }
 }

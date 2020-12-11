@@ -11,7 +11,7 @@ tempo.textContent = metronome.tempo;
 
 playButton.addEventListener('click', () => {
     metronome.startStop();
-    pendulum.startStop();
+    pendulum.swing();
     if (metronome.isRunning){
         playPauseIcon.className = 'pause';
     } else {
